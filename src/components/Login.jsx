@@ -26,9 +26,9 @@ function Login({ link = "/home", redirect }) {
         body: JSON.stringify(userData),
       });
 
-      const data = await response.json();
       // Handle the response as needed
       if (response.ok) {
+        const data = await response.json();
         // Successful login, redirect
         localStorage.setItem("projectX", data.projectX);
         setIsLoggedIn(true);
@@ -55,11 +55,11 @@ function Login({ link = "/home", redirect }) {
 
   return (
     <>
-      {theErrors
+      {theErrors.length > 0
         ? theErrors.map((error, index) => {
             return (
               <p key={error.msg || index} className="errors">
-                {error.msg}
+                {error}
               </p>
             );
           })

@@ -54,7 +54,6 @@ function Profile() {
       const response = await fetch(`${localHost}/v1/api/user/${id}/admin/toggle`, requestOptions);
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         localStorage.setItem("projectX", data.projectX);
         getUserInfo();
       } else {

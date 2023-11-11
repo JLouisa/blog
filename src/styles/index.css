@@ -74,14 +74,29 @@ button:focus-visible {
 
 nav {
   border-bottom: 2px solid var(--frameColor);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   align-items: center;
+  justify-content: space-between;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.logo {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+nav h1 {
+  grid-row: 1/2;
+  grid-column: 2/3;
 }
 
 .menuLinks {
   display: flex;
   gap: 1em;
+  grid-row: 1/2;
+  grid-column: 3/4;
+  justify-self: end;
 }
 
 .menuLinks a {

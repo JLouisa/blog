@@ -51,12 +51,15 @@ function Profile() {
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await fetch(`${localHost}/v1/api/user/${id}/admin`, requestOptions);
+      const response = await fetch(`${localHost}/v1/api/user/${id}/admin/toggle`, requestOptions);
       if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        localStorage.setItem("projectX", data.projectX);
         getUserInfo();
       } else {
         const errorData = response.json();
-        setErrors(errorData.errors);
+        setErrors([errorData]);
       }
     } catch (err) {
       console.error("Error getting user information");

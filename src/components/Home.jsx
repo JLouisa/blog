@@ -64,7 +64,7 @@ function Home() {
     return <>{visibleBlogs.map((blog) => (blog.isHidden === false || isAdmin === true ? renderBlog(blog) : null))}</>;
   };
 
-  if (!Array.isArray(blogs) || blogs.length === 0) return <p>Loading Blogs...</p>;
+  if (!Array.isArray(blogs) || blogs.length === 0) return <p className="loading">Loading Blogs...</p>;
 
   return (
     <section>

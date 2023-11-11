@@ -118,6 +118,11 @@ footer {
 }
 
 /* =======Components======== */
+.loading {
+  justify-self: center;
+  align-self: center;
+}
+
 .blogs,
 .comment {
   border-radius: 15px;

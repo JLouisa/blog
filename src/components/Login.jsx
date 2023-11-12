@@ -40,7 +40,6 @@ function Login({ link = "/home", redirect }) {
       } else {
         const responseData = await response.json();
         if (responseData.data.errors) {
-          console.log(responseData.data.errors);
           setTheErrors(responseData.data.errors);
         } else {
           console.error("Unexpected response format:", responseData);
